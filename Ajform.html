@@ -1,0 +1,91 @@
+<script src='jquery-2.1.1.min.js'></script>
+
+<script>
+$(function(){
+		console.log("test");
+
+})
+
+function ajaxTest(){
+
+
+
+obj = { 
+	fname: $('#item').val(),
+	lname: $('#cost').val()
+};
+
+
+$.ajax({
+	method: "post",
+	url: "jq.php",
+	//dataType: "json",
+	data: obj,
+	success: function (data) {
+		//alert (data);		
+		y = $('#jadu');
+		y[0].innerHTML = data;
+	},
+	error: function (data) {
+		
+	}
+});
+
+
+}
+
+</script>
+<style>
+     body {
+	color: DeepPink;
+        background-color: F0FFF0;
+	text-align: center;
+        
+          }
+ table{
+	color:9A32CD ;
+        background-color: F0FFF0;
+        text-align: center;
+        font-family: verdana;
+
+}
+
+</style> 
+<html>
+<body>
+<h5 id='jadu'><center>Hello To Super VIP MARKET</center></h5>
+<hr>
+<h2><center>
+<table border="10" align="center">
+<caption><b> VIP MARKET</b>
+</caption>
+<tr>
+<form action="gopro.php" method="get">
+<td>
+<b>Item :</b>
+<input type="text" name="item" id="item"><br>
+</td>
+</tr>
+<tr>
+<td>
+<b>Cost : </b>
+
+<input type="text" name="cost" id="cost"><br>
+
+
+
+<input type="submit" value="SUBMIT">
+<input type="button" value="SHOW MY ITEMS" onclick='ajaxTest()'>
+</td>
+</tr>
+
+</form>
+</table>
+
+</center></h2>
+<footer style="color:9AFF9A;background-color:FFF0F5;margin-left:30px;">&copy Copyright VIPUL 
+</footer>
+
+</html>
+
+
